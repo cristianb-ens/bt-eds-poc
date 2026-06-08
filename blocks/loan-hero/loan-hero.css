@@ -1,3 +1,13 @@
+/* === Full-width section override === */
+main > .section.loan-hero-container {
+  margin: 0;
+}
+
+main > .section > .loan-hero-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
 /* === Theme Tokens === */
 .loan-hero-wrapper {
   --loan-hero-accent: #1a76ff;
@@ -53,11 +63,6 @@
   color: var(--loan-hero-text);
 }
 
-.loan-hero-wrapper .loan-hero h1,
-.loan-hero-wrapper .loan-hero p,
-.loan-hero-wrapper .loan-hero span {
-  max-width: 500px;
-}
 
 /* === Badge (h1 on source — light weight supertitle) === */
 .loan-hero-badge {
