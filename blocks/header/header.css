@@ -104,18 +104,19 @@ header .nav-link-item:hover .nav-dropdown {
 }
 
 header .nav-dropdown-inner {
-  background-color: #111;
-  padding: 48px 0 64px;
+  background-color: #0f0f0f;
+  padding: 56px 0 72px;
   width: 100%;
+  border-top: 1px solid rgba(255 255 255 / 8%);
 }
 
 header .nav-dropdown-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 48px 32px;
-  max-width: 960px;
+  gap: 56px 48px;
+  max-width: 1408px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 64px;
 }
 
 header .nav-dropdown-col {
@@ -124,22 +125,27 @@ header .nav-dropdown-col {
 
 header .nav-dropdown-heading {
   font-family: var(--heading-font-family);
-  font-size: 22px;
+  font-size: 29px;
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
-  margin: 0 0 16px;
-  letter-spacing: -0.3px;
+  margin: 0 0 20px;
+  letter-spacing: -0.29px;
+  line-height: 1.2;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255 255 255 / 12%);
 }
 
 header .nav-dropdown-link {
   display: block;
   font-family: var(--body-font-family);
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   color: rgba(255 255 255 / 70%);
   text-decoration: none;
-  padding: 6px 0;
+  padding: 8px 0;
+  letter-spacing: -0.09px;
+  line-height: 1.44;
   transition: color 0.2s ease-in-out;
 }
 
