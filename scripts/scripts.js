@@ -121,6 +121,36 @@ function decorateSections(main) {
 }
 
 /**
+ * Reads the active niche variant from URL search params.
+ * Defaults to 'standard' if no ?niche= parameter is present.
+ */
+function getActiveVariant() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('niche') || 'standard';
+}
+
+/**
+ * Routes variant sections: hides sections whose variant class
+ * does not match the active niche, shows the matching ones.
+ * Sections without a variant class are always shown.
+ */
+function routeVariantSections(main) {
+  const active = getActiveVariant();
+  main.querySelectorAll('.section[class*="variant-"]').forEach((section) => {
+    const classes = [...section.classList];
+    const variantClass = classes.find((c) => c.startsWith('variant-'));
+    if (!variantClass) return;
+    const variantName = variantClass.replace('variant-', '');
+    if (variantName === active) {
+      section.classList.add('active-variant');
+    } else {
+      section.classList.remove('active-variant');
+      section.remove();
+    }
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -131,6 +161,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  routeVariantSections(main);
   decorateBlocks(main);
 }
 

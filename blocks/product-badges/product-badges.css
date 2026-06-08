@@ -3,82 +3,60 @@
   --badge-accent: var(--accent-color);
   --badge-text: var(--text-color);
   --badge-label-text: var(--text-color);
-  --badge-value-size: var(--heading-font-size-l);
-  --badge-label-size: var(--body-font-size-s);
-  --badge-gap: var(--spacing-2xl);
 
-  padding: var(--spacing-3xl) 0 var(--spacing-5xl);
+  padding: 32px 0 64px;
 }
 
-/* === Variant: Student (green) === */
-.product-badges-wrapper.student {
-  --badge-accent: var(--bt-green);
-}
-
-/* === Variant: Medical (purple) === */
-.product-badges-wrapper.medical {
-  --badge-accent: var(--bt-star-purple);
-}
-
-/* === Variant: Auto (deep blue) === */
-.product-badges-wrapper.auto {
-  --badge-accent: var(--blue-t08);
-}
-
-/* === Variant: Renovation (yellow) === */
-.product-badges-wrapper.renovation {
-  --badge-accent: var(--bt-yellow);
-  --badge-text: var(--bt-black);
-}
+/* === Variant overrides === */
+.product-badges-wrapper.student { --badge-accent: var(--bt-green); }
+.product-badges-wrapper.medical { --badge-accent: var(--bt-star-purple); }
+.product-badges-wrapper.auto { --badge-accent: var(--blue-t08); }
+.product-badges-wrapper.renovation { --badge-accent: var(--bt-yellow); }
 
 /* === Grid Layout === */
 .product-badges-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--badge-gap);
+  gap: 24px;
   max-width: var(--max-width-content);
   margin: 0 auto;
-  padding: 0 var(--spacing-l);
+  padding: 0 16px;
 }
 
 .product-badges-item {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
+  gap: 4px;
   flex: 1 1 140px;
   min-width: 0;
 }
 
-/* === Value (large key element) === */
+/* === Value === */
 .product-badges-value {
   font-family: var(--heading-font-family);
-  font-size: var(--badge-value-size);
+  font-size: 36px;
   font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
-  letter-spacing: var(--letter-spacing-tight);
+  line-height: 0.95;
+  letter-spacing: -0.72px;
   text-transform: uppercase;
   color: var(--badge-accent);
 }
 
-/* === Label (descriptive text) === */
+/* === Label === */
 .product-badges-label {
   font-family: var(--body-font-family);
-  font-size: var(--badge-label-size);
+  font-size: 17px;
   font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-normal);
+  line-height: 1.44;
   color: var(--badge-label-text);
+  min-width: 0;
 }
 
-/* === Responsive === */
+/* === Responsive: Desktop === */
 @media (width >= 900px) {
-  .product-badges-wrapper {
-    --badge-value-size: var(--heading-font-size-l);
-    --badge-label-size: 17px;
-  }
-
   .product-badges-grid {
     flex-wrap: nowrap;
-    padding: 0 var(--spacing-2xl);
+    padding: 0 24px;
   }
 
   .product-badges-item {
