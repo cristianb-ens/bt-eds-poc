@@ -1,6 +1,6 @@
-/* header overlays hero — transparent */
+/* header overlays hero — starts transparent, animates to black */
 header {
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -8,19 +8,36 @@ header {
   height: 0;
 }
 
+header .header {
+  visibility: visible;
+}
+
 header .nav-wrapper {
-  background-color: transparent;
+  background-color: rgba(0 0 0 / 0%);
   width: 100%;
+  animation: nav-fade-in 1.5s ease-in-out 0.5s forwards;
+}
+
+@keyframes nav-fade-in {
+  to {
+    background-color: rgba(0 0 0 / 85%);
+  }
 }
 
 header nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   max-width: 1408px;
   height: 74px;
   margin: 0 auto;
-  padding: 0 24px;
-  gap: 32px;
+  padding: 0 16px;
+}
+
+@media (width >= 900px) {
+  header nav {
+    padding: 0 24px;
+  }
 }
 
 /* brand / logo */
@@ -33,11 +50,11 @@ header .nav-brand a {
   align-items: center;
 }
 
-/* nav links (center) */
+/* nav links */
 header .nav-links {
   display: none;
   align-items: center;
-  gap: 32px;
+  margin-left: 24px;
   flex: 1;
 }
 
@@ -46,13 +63,16 @@ header .nav-links a {
   font-family: var(--body-font-family);
   font-size: 14px;
   font-weight: 500;
+  letter-spacing: -0.09px;
   text-decoration: none;
   white-space: nowrap;
+  padding: 28px 24px;
   transition: opacity 0.25s ease-in-out;
 }
 
 header .nav-links a:hover {
-  opacity: 0.8;
+  opacity: 0.7;
+  text-decoration: none;
 }
 
 @media (width >= 900px) {
@@ -65,11 +85,10 @@ header .nav-links a:hover {
 header .nav-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-left: auto;
+  gap: 12px;
 }
 
-/* icon buttons (phone, person, search) */
+/* icon buttons */
 header .nav-icon {
   display: none;
   align-items: center;
@@ -77,16 +96,16 @@ header .nav-icon {
   width: 38px;
   height: 38px;
   border: 0;
-  border-radius: 50%;
+  border-radius: 38px;
   padding: 0;
-  background-color: rgba(255 255 255 / 15%);
+  background-color: rgba(255 255 255 / 10%);
   color: #fff;
   cursor: pointer;
   transition: background-color 0.25s ease-in-out;
 }
 
 header .nav-icon:hover {
-  background-color: rgba(255 255 255 / 25%);
+  background-color: rgba(255 255 255 / 20%);
 }
 
 @media (width >= 900px) {
@@ -95,13 +114,13 @@ header .nav-icon:hover {
   }
 }
 
-/* Internet Banking button (dark pill) */
+/* Internet Banking (dark semi-transparent pill) */
 header .nav-btn-secondary {
   display: none;
   align-items: center;
   padding: 10px 16px;
   border-radius: 38px;
-  background-color: rgba(0 0 0 / 50%);
+  background-color: rgba(255 255 255 / 10%);
   color: #fff;
   font-family: var(--body-font-family);
   font-size: 12px;
@@ -113,7 +132,8 @@ header .nav-btn-secondary {
 }
 
 header .nav-btn-secondary:hover {
-  background-color: rgba(0 0 0 / 70%);
+  background-color: rgba(255 255 255 / 20%);
+  text-decoration: none;
 }
 
 @media (width >= 900px) {
@@ -122,7 +142,7 @@ header .nav-btn-secondary:hover {
   }
 }
 
-/* Deschide cont button (blue pill) */
+/* Deschide cont (blue pill) */
 header .nav-btn-primary {
   display: inline-flex;
   align-items: center;
@@ -141,4 +161,5 @@ header .nav-btn-primary {
 
 header .nav-btn-primary:hover {
   background-color: #0090ff;
+  text-decoration: none;
 }
