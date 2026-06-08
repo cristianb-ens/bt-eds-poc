@@ -4,19 +4,16 @@ main > .section.product-badges-container {
 }
 
 main > .section > .product-badges-wrapper {
+  --badge-accent: #1a76ff;
+  --badge-text: #fff;
+
   max-width: none;
   padding: 0;
   background-color: #111;
 }
 
-/* === Theme Tokens === */
-.product-badges-wrapper {
-  --badge-accent: #1a76ff;
-  --badge-text: #fff;
-}
-
-.product-badges-wrapper.student { --badge-accent: var(--bt-green); }
-.product-badges-wrapper.medical { --badge-accent: var(--bt-star-purple); }
+main > .section > .product-badges-wrapper.student { --badge-accent: var(--bt-green); }
+main > .section > .product-badges-wrapper.medical { --badge-accent: var(--bt-star-purple); }
 
 /* === Grid: 2 columns on desktop === */
 .product-badges-grid {
@@ -52,16 +49,14 @@ main > .section > .product-badges-wrapper {
     border-bottom: none;
   }
 
-  /* Separator line between first row and second row */
   .product-badges-item:nth-child(n+3) {
     padding-top: 60px;
     border-top: 1px solid rgba(255 255 255 / 12%);
   }
 }
 
-/* === Value (large heading with blue highlight) === */
-.product-badges-value {
-  display: block;
+/* === Heading (full phrase, uppercase bold, value in blue) === */
+.product-badges-heading {
   font-family: var(--heading-font-family);
   font-size: 36px;
   font-weight: 700;
@@ -69,50 +64,41 @@ main > .section > .product-badges-wrapper {
   letter-spacing: -0.9px;
   text-transform: uppercase;
   text-align: center;
-  color: var(--badge-accent);
+  color: var(--badge-text);
   margin: 0 0 16px;
 }
 
 @media (width >= 900px) {
-  .product-badges-value {
+  .product-badges-heading {
     font-size: 45px;
-    line-height: 0.9;
   }
 }
 
-/* Blue highlighted number within the value */
-.product-badges-value strong,
-.product-badges-value em,
-.product-badges-value u {
-  color: var(--badge-accent);
-  text-decoration: none;
-  font-style: normal;
-}
-
-/* === Label (description) === */
-.product-badges-label {
-  display: block;
+/* === Description === */
+.product-badges-desc {
   font-family: var(--body-font-family);
   font-size: 17px;
   font-weight: 500;
   line-height: 1.44;
   text-align: center;
   color: var(--badge-text);
-  min-width: 0;
+}
+
+.product-badges-desc p {
+  margin: 0;
 }
 
 @media (width >= 900px) {
-  .product-badges-label {
+  .product-badges-desc {
     font-size: 20px;
-    line-height: 1.44;
   }
 }
 
-.product-badges-label a {
+.product-badges-desc a {
   color: var(--badge-accent);
   text-decoration: none;
 }
 
-.product-badges-label a:hover {
+.product-badges-desc a:hover {
   text-decoration: underline;
 }
