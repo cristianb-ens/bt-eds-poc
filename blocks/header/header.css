@@ -1,79 +1,76 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: transparent;
   width: 100%;
-  z-index: 2;
-  position: fixed;
+  z-index: 3;
+  position: sticky;
+  top: 0;
 }
 
 header nav {
   box-sizing: border-box;
-  display: grid;
-  grid-template:
-    'hamburger brand tools' var(--nav-height)
-    'sections sections sections' 1fr / auto 1fr auto;
+  display: flex;
   align-items: center;
-  gap: 0 24px;
+  justify-content: space-between;
   margin: auto;
-  max-width: 1248px;
-  height: var(--nav-height);
-  padding: 0 24px;
+  max-width: 1408px;
+  height: 74px;
+  padding: 0 16px;
   font-family: var(--body-font-family);
 }
 
 header nav[aria-expanded='true'] {
-  grid-template:
-    'hamburger brand' var(--nav-height)
-    'sections sections' 1fr
-    'tools tools' var(--nav-height) / auto 1fr;
   overflow-y: auto;
   min-height: 100dvh;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 @media (width >= 900px) {
   header nav {
-    display: flex;
-    justify-content: space-between;
-    gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
+    padding: 0 24px;
   }
 
   header nav[aria-expanded='true'] {
     min-height: 0;
     overflow: visible;
+    flex-wrap: nowrap;
+    align-content: normal;
   }
 }
 
 header nav p {
   margin: 0;
-  
-  /* line-height: 1; BOILERPLATE DOESN'T HAVE a P tag in header, */
 }
 
 header nav a:any-link {
   color: currentcolor;
+  text-decoration: none;
+  transition: color 0.25s ease-in-out;
 }
 
 /* hamburger */
 header nav .nav-hamburger {
-  grid-area: hamburger;
-  height: 22px;
   display: flex;
   align-items: center;
+  order: -1;
 }
 
 header nav .nav-hamburger button {
-  height: 22px;
+  width: 32px;
+  height: 32px;
   margin: 0;
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: inherit;
+  background-color: transparent;
+  color: var(--bt-white);
   overflow: initial;
   text-overflow: initial;
   white-space: initial;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 header nav .nav-hamburger-icon,
@@ -136,23 +133,19 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   }
 }
 
-/* brand */
+/* brand / logo */
 header .nav-brand {
-  grid-area: brand;
-  flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
-  line-height: 1;
+  flex-shrink: 0;
 }
 
 header nav .nav-brand img {
-  width: 128px;
-  height: auto;
+  width: 37px;
+  height: 42px;
+  display: block;
 }
 
-/* sections */
+/* sections (nav links) */
 header nav .nav-sections {
-  grid-area: sections;
   flex: 1 1 auto;
   display: none;
   visibility: hidden;
@@ -162,12 +155,14 @@ header nav[aria-expanded='true'] .nav-sections {
   display: block;
   visibility: visible;
   align-self: start;
+  width: 100%;
+  order: 3;
 }
 
 header nav .nav-sections ul {
   list-style: none;
   padding-left: 0;
-  font-size: var(--body-font-size-s);
+  font-size: 14px;
 }
 
 header nav .nav-sections ul > li {
@@ -191,6 +186,8 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav[aria-expanded='true'] .nav-sections {
     align-self: unset;
+    width: auto;
+    order: unset;
   }
 
   header nav .nav-sections .nav-drop {
@@ -265,27 +262,44 @@ header nav .nav-sections ul > li > ul > li {
   }
 }
 
-/* tools */
+/* tools / right actions */
 header nav .nav-tools {
-  grid-area: tools;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-header nav .nav-tools .button {
+header nav .nav-tools a.button {
   margin: 0;
+  padding: 10px;
+  border-radius: 38px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  background-color: #1a76ff;
+  color: #fff;
   border: none;
-  padding: 0.5em;
-  background: none;
-  line-height: 0;
+}
+
+header nav .nav-tools a.button.secondary {
+  background-color: rgba(255 255 255 / 10%);
+  color: #fff;
+  border: none;
+}
+
+header nav .nav-tools a.button:hover {
+  background-color: #0090ff;
 }
 
 /* breadcrumbs */
 header .breadcrumbs {
   display: none;
   margin: auto;
-  max-width: 1248px;
+  max-width: 1408px;
   height: var(--breadcrumbs-height);
-  padding: 0 24px;
-  font-size: var(--body-font-size-xs);
+  padding: 0 16px;
+  font-size: 12px;
   overflow: hidden;
 }
 
@@ -302,7 +316,7 @@ header .breadcrumbs ol {
 /* stylelint-disable-next-line no-descending-specificity */
 header .breadcrumbs ol li {
   padding: 0;
-  color: var(--dark-color);
+  color: var(--gray-450);
 }
 
 header .breadcrumbs ol li:not(:last-child)::after {
@@ -318,7 +332,6 @@ header .breadcrumbs ol li[aria-current] {
 @media (width >= 900px) {
   header .breadcrumbs {
     display: block;
-    max-width: 1264px;
-    padding: 0 32px;
+    padding: 0 24px;
   }
 }
