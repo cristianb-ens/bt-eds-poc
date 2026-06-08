@@ -23,9 +23,7 @@ export default async function decorate(block) {
       { heading: 'Conturi și operațiuni', links: ['Cont online', 'Abonamente de cont curent', 'Oferta pentru tineri', 'Actualizare date', 'Schimb valutar'] },
       { heading: 'Economii și investiții', links: ['Economii', 'Fonduri de investiții', 'Pensii facultative', 'Investiții la bursă'] },
       { heading: 'Asigurări', links: ['Asigurare de călătorie', 'Asigurare RCA', 'Asigurări de locuință', 'Asigurări de viață', 'Asigurări atașate creditelor'] },
-      { heading: 'Premium Banking', links: ['Premium Club', 'Private Banking'] },
-      { heading: 'BT Pay Kiddo', links: [] },
-      { heading: 'Diaspora', links: [] },
+      { heading: 'Premium Banking', links: ['Premium Club', 'Private Banking'], extra: ['BT Pay Kiddo', 'Diaspora'] },
     ],
     Business: [
       { heading: 'Credite', links: ['Credit pentru investiții', 'Credit capital de lucru', 'Linie de credit'] },
@@ -80,6 +78,15 @@ export default async function decorate(block) {
         link.textContent = linkText;
         column.append(link);
       });
+
+      if (col.extra) {
+        col.extra.forEach((extraHeading) => {
+          const extraH = document.createElement('h3');
+          extraH.className = 'nav-dropdown-heading nav-dropdown-heading-extra';
+          extraH.textContent = extraHeading;
+          column.append(extraH);
+        });
+      }
 
       grid.append(column);
     });
