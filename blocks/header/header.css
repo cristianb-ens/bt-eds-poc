@@ -1,16 +1,14 @@
 /* header and nav layout */
 header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 3;
   height: auto;
 }
 
 header .nav-wrapper {
-  background-color: transparent;
+  background-color: #fff;
   width: 100%;
+  border-bottom: 1px solid #efeff1;
 }
 
 header nav {
@@ -70,7 +68,7 @@ header nav .nav-hamburger button {
   border-radius: 0;
   padding: 0;
   background-color: transparent;
-  color: var(--bt-white);
+  color: var(--bt-black);
   overflow: initial;
   text-overflow: initial;
   white-space: initial;
@@ -137,11 +135,10 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand / logo */
 header .nav-brand {
   flex-shrink: 0;
-  color: var(--bt-white);
 }
 
 header nav .nav-brand a {
-  color: var(--bt-white);
+  color: var(--bt-black);
   font-weight: 700;
   font-size: 14px;
   text-decoration: none;
@@ -272,9 +269,9 @@ header nav .nav-tools a.button {
 }
 
 header nav .nav-tools a.button.secondary {
-  background-color: rgba(255 255 255 / 10%);
-  color: #fff;
-  border: none;
+  background-color: transparent;
+  color: #1a76ff;
+  border: 1px solid #dfdfdf;
 }
 
 header nav .nav-tools a.button:hover {

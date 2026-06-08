@@ -46,11 +46,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 420px;
+  min-height: 480px;
   padding: 64px 16px 80px;
   max-width: 1408px;
   margin: 0 auto;
   color: var(--loan-hero-text);
+}
+
+.loan-hero-wrapper .loan-hero h1,
+.loan-hero-wrapper .loan-hero p,
+.loan-hero-wrapper .loan-hero span {
+  max-width: 500px;
 }
 
 /* === Badge (h1 on source — light weight supertitle) === */
@@ -134,9 +140,9 @@
 
 /* === Secondary CTA === */
 .loan-hero .loan-hero-cta-secondary {
-  background-color: var(--loan-hero-cta-secondary-bg);
-  color: var(--loan-hero-cta-secondary-text);
-  border: 1px solid var(--loan-hero-cta-secondary-border);
+  background-color: #fff;
+  color: var(--loan-hero-accent);
+  border: 1px solid #dfdfdf;
 }
 
 .loan-hero .loan-hero-cta-secondary:hover {
