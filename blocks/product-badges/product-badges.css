@@ -69,7 +69,7 @@ main > .section > .product-badges-wrapper {
   letter-spacing: -0.9px;
   text-transform: uppercase;
   text-align: center;
-  color: var(--badge-text);
+  color: var(--badge-accent);
   margin: 0 0 16px;
 }
 
