@@ -66,7 +66,7 @@ header .nav-links {
 
 /* individual nav link item (has dropdown) */
 header .nav-link-item {
-  position: relative;
+  position: static;
 }
 
 header .nav-link-trigger {
@@ -80,21 +80,22 @@ header .nav-link-trigger {
   padding: 28px 24px;
   display: block;
   transition: opacity 0.25s ease-in-out;
+  border-bottom: 2px solid transparent;
 }
 
-header .nav-link-trigger:hover {
-  opacity: 0.7;
+header .nav-link-item:hover .nav-link-trigger {
+  border-bottom-color: #1a76ff;
+  color: #1a76ff;
   text-decoration: none;
 }
 
-/* dropdown mega menu */
+/* dropdown mega menu — full width dark panel */
 header .nav-dropdown {
   display: none;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 74px;
   left: 0;
-  min-width: 280px;
-  padding-top: 8px;
+  right: 0;
   z-index: 10;
 }
 
@@ -103,27 +104,48 @@ header .nav-link-item:hover .nav-dropdown {
 }
 
 header .nav-dropdown-inner {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 16px 0;
-  box-shadow: 0 8px 28px -6px rgba(0 0 0 / 12%), 0 18px 88px -4px rgba(24 39 75 / 14%);
+  background-color: #111;
+  padding: 48px 0 64px;
+  width: 100%;
 }
 
-header .nav-dropdown-item {
+header .nav-dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 32px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+header .nav-dropdown-col {
+  min-width: 0;
+}
+
+header .nav-dropdown-heading {
+  font-family: var(--heading-font-family);
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 16px;
+  letter-spacing: -0.3px;
+}
+
+header .nav-dropdown-link {
   display: block;
-  padding: 12px 24px;
   font-family: var(--body-font-family);
   font-size: 14px;
-  font-weight: 500;
-  color: #111;
+  font-weight: 400;
+  color: rgba(255 255 255 / 70%);
   text-decoration: none;
-  transition: background-color 0.15s ease-in-out;
+  padding: 6px 0;
+  transition: color 0.2s ease-in-out;
 }
 
-header .nav-dropdown-item:hover {
-  background-color: #f4f4f5;
+header .nav-dropdown-link:hover {
+  color: #fff;
   text-decoration: none;
-  color: #1a76ff;
 }
 
 /* right actions */

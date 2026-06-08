@@ -16,24 +16,44 @@ export default async function decorate(block) {
     </svg>
   </a>`;
 
-  const menuData = [
-    { label: 'Personal', items: ['Credite', 'Carduri', 'Conturi și operațiuni', 'Economii și investiții', 'Asigurări', 'Premium Banking'] },
-    { label: 'Business', items: ['Credite business', 'Conturi curente', 'POS și eCommerce', 'Leasing', 'Factoring'] },
-    { label: 'Despre BT', items: ['Despre noi', 'Cariere', 'Responsabilitate socială', 'Știri și comunicate'] },
-    { label: 'Relații Investitori', items: ['Rezultate financiare', 'Acțiunea BT', 'Guvernanță corporativă'] },
-  ];
+  const menuData = {
+    Personal: [
+      { heading: 'Credite', links: ['Creditul de nevoi personale', 'Creditul pentru casă', 'Creditul Overdraft'] },
+      { heading: 'Carduri', links: ['Cardurile de credit Star', 'Cardurile de credit BT Flying Blue', 'Carduri de debit', 'Cardul de masă'] },
+      { heading: 'Conturi și operațiuni', links: ['Cont online', 'Abonamente de cont curent', 'Oferta pentru tineri', 'Actualizare date', 'Schimb valutar'] },
+      { heading: 'Economii și investiții', links: ['Economii', 'Fonduri de investiții', 'Pensii facultative', 'Investiții la bursă'] },
+      { heading: 'Asigurări', links: ['Asigurare de călătorie', 'Asigurare RCA', 'Asigurări de locuință', 'Asigurări de viață', 'Asigurări atașate creditelor'] },
+      { heading: 'Premium Banking', links: ['Premium Club', 'Private Banking'] },
+      { heading: 'BT Pay Kiddo', links: [] },
+      { heading: 'Diaspora', links: [] },
+    ],
+    Business: [
+      { heading: 'Credite', links: ['Credit pentru investiții', 'Credit capital de lucru', 'Linie de credit'] },
+      { heading: 'Conturi', links: ['Cont curent business', 'Operațiuni de încasări', 'Cash management'] },
+      { heading: 'POS și eCommerce', links: ['Terminal POS', 'Plăți online', 'BT Pay Business'] },
+    ],
+    'Despre BT': [
+      { heading: 'Despre noi', links: ['Istoria BT', 'Management', 'Responsabilitate socială'] },
+      { heading: 'Cariere', links: ['Locuri de muncă', 'Programe de internship'] },
+      { heading: 'Știri', links: ['Comunicate de presă', 'Blog BT'] },
+    ],
+    'Relații Investitori': [
+      { heading: 'Financiar', links: ['Rezultate financiare', 'Rapoarte anuale', 'Acțiunea BT'] },
+      { heading: 'Guvernanță', links: ['Guvernanță corporativă', 'AGA'] },
+    ],
+  };
 
   const links = document.createElement('div');
   links.className = 'nav-links';
 
-  menuData.forEach((menu) => {
+  Object.entries(menuData).forEach(([label, columns]) => {
     const item = document.createElement('div');
     item.className = 'nav-link-item';
 
     const trigger = document.createElement('a');
     trigger.href = '/';
     trigger.className = 'nav-link-trigger';
-    trigger.textContent = menu.label;
+    trigger.textContent = label;
 
     const dropdown = document.createElement('div');
     dropdown.className = 'nav-dropdown';
@@ -41,14 +61,30 @@ export default async function decorate(block) {
     const dropdownInner = document.createElement('div');
     dropdownInner.className = 'nav-dropdown-inner';
 
-    menu.items.forEach((subItem) => {
-      const link = document.createElement('a');
-      link.href = '/';
-      link.className = 'nav-dropdown-item';
-      link.textContent = subItem;
-      dropdownInner.append(link);
+    const grid = document.createElement('div');
+    grid.className = 'nav-dropdown-grid';
+
+    columns.forEach((col) => {
+      const column = document.createElement('div');
+      column.className = 'nav-dropdown-col';
+
+      const heading = document.createElement('h3');
+      heading.className = 'nav-dropdown-heading';
+      heading.textContent = col.heading;
+      column.append(heading);
+
+      col.links.forEach((linkText) => {
+        const link = document.createElement('a');
+        link.href = '/';
+        link.className = 'nav-dropdown-link';
+        link.textContent = linkText;
+        column.append(link);
+      });
+
+      grid.append(column);
     });
 
+    dropdownInner.append(grid);
     dropdown.append(dropdownInner);
     item.append(trigger);
     item.append(dropdown);
