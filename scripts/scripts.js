@@ -130,21 +130,17 @@ function getActiveVariant() {
 }
 
 /**
- * Routes variant sections: hides sections whose variant class
+ * Routes variant sections: hides sections whose data-variant attribute
  * does not match the active niche, shows the matching ones.
- * Sections without a variant class are always shown.
+ * Sections without a variant attribute are always shown.
  */
 function routeVariantSections(main) {
   const active = getActiveVariant();
-  main.querySelectorAll('.section[class*="variant-"]').forEach((section) => {
-    const classes = [...section.classList];
-    const variantClass = classes.find((c) => c.startsWith('variant-'));
-    if (!variantClass) return;
-    const variantName = variantClass.replace('variant-', '');
+  main.querySelectorAll('.section[data-variant]').forEach((section) => {
+    const variantName = section.dataset.variant;
     if (variantName === active) {
-      section.classList.add('active-variant');
+      section.classList.add('active-variant', `variant-${variantName}`);
     } else {
-      section.classList.remove('active-variant');
       section.remove();
     }
   });
