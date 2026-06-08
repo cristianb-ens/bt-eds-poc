@@ -145,7 +145,7 @@ header .nav-brand {
   color: var(--bt-white);
 }
 
-header .nav-brand a {
+header nav .nav-brand a {
   color: var(--bt-white);
   font-weight: 700;
   font-size: 14px;
@@ -198,7 +198,7 @@ header nav .nav-sections ul > li > ul > li {
   padding: 4px 0;
 }
 
-header nav .nav-sections a {
+header nav .nav-sections a:any-link {
   color: var(--bt-white);
 }
 
