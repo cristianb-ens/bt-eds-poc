@@ -16,14 +16,44 @@ export default async function decorate(block) {
     </svg>
   </a>`;
 
+  const menuData = [
+    { label: 'Personal', items: ['Credite', 'Carduri', 'Conturi și operațiuni', 'Economii și investiții', 'Asigurări', 'Premium Banking'] },
+    { label: 'Business', items: ['Credite business', 'Conturi curente', 'POS și eCommerce', 'Leasing', 'Factoring'] },
+    { label: 'Despre BT', items: ['Despre noi', 'Cariere', 'Responsabilitate socială', 'Știri și comunicate'] },
+    { label: 'Relații Investitori', items: ['Rezultate financiare', 'Acțiunea BT', 'Guvernanță corporativă'] },
+  ];
+
   const links = document.createElement('div');
   links.className = 'nav-links';
-  links.innerHTML = `
-    <a href="/">Personal</a>
-    <a href="/">Business</a>
-    <a href="/">Despre BT</a>
-    <a href="/">Relații Investitori</a>
-  `;
+
+  menuData.forEach((menu) => {
+    const item = document.createElement('div');
+    item.className = 'nav-link-item';
+
+    const trigger = document.createElement('a');
+    trigger.href = '/';
+    trigger.className = 'nav-link-trigger';
+    trigger.textContent = menu.label;
+
+    const dropdown = document.createElement('div');
+    dropdown.className = 'nav-dropdown';
+
+    const dropdownInner = document.createElement('div');
+    dropdownInner.className = 'nav-dropdown-inner';
+
+    menu.items.forEach((subItem) => {
+      const link = document.createElement('a');
+      link.href = '/';
+      link.className = 'nav-dropdown-item';
+      link.textContent = subItem;
+      dropdownInner.append(link);
+    });
+
+    dropdown.append(dropdownInner);
+    item.append(trigger);
+    item.append(dropdown);
+    links.append(item);
+  });
 
   const actions = document.createElement('div');
   actions.className = 'nav-actions';
