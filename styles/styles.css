@@ -205,7 +205,7 @@ body.appear {
 }
 
 header {
-  height: auto;
+  height: 0;
 }
 
 header .header,

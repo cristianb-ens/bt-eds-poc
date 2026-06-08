@@ -1,11 +1,4 @@
-import { getMetadata } from '../../scripts/aem.js';
-import { loadFragment } from '../fragment/fragment.js';
-
 export default async function decorate(block) {
-  const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
-  const fragment = await loadFragment(navPath);
-
   block.textContent = '';
 
   const nav = document.createElement('nav');
@@ -23,22 +16,33 @@ export default async function decorate(block) {
     </svg>
   </a>`;
 
+  const links = document.createElement('div');
+  links.className = 'nav-links';
+  links.innerHTML = `
+    <a href="/">Personal</a>
+    <a href="/">Business</a>
+    <a href="/">Despre BT</a>
+    <a href="/">Relații Investitori</a>
+  `;
+
   const actions = document.createElement('div');
   actions.className = 'nav-actions';
-
-  const cta = document.createElement('a');
-  cta.href = '/credite/credite-de-nevoi/aplica-pentru-credit';
-  cta.className = 'nav-cta';
-  cta.textContent = 'Deschide cont';
-  actions.append(cta);
-
-  const hamburger = document.createElement('button');
-  hamburger.className = 'nav-hamburger';
-  hamburger.setAttribute('aria-label', 'Menu');
-  hamburger.innerHTML = '<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><rect width="16" height="2" rx="1" fill="currentColor"/><rect y="5" width="16" height="2" rx="1" fill="currentColor"/><rect y="10" width="16" height="2" rx="1" fill="currentColor"/></svg>';
-  actions.append(hamburger);
+  actions.innerHTML = `
+    <button class="nav-icon" aria-label="Telefon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    </button>
+    <button class="nav-icon" aria-label="Cont">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </button>
+    <button class="nav-icon" aria-label="Caută">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <a href="/" class="nav-btn-secondary">Internet Banking</a>
+    <a href="/credite/credite-de-nevoi/aplica-pentru-credit" class="nav-btn-primary">Deschide cont</a>
+  `;
 
   nav.append(brand);
+  nav.append(links);
   nav.append(actions);
 
   const wrapper = document.createElement('div');
