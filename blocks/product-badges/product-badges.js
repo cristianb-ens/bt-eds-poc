@@ -1,3 +1,8 @@
+function highlightValue(text) {
+  const pattern = /(\d[\d.,]*\s*(%|lei|ani|luni|euro))|(\bbanii\b)/gi;
+  return text.replace(pattern, '<span class="product-badges-accent">$&</span>');
+}
+
 export default function decorate(block) {
   const rows = [...block.querySelectorAll(':scope > div')];
   block.textContent = '';
@@ -18,7 +23,7 @@ export default function decorate(block) {
 
     const headingEl = document.createElement('h3');
     headingEl.className = 'product-badges-heading';
-    headingEl.textContent = heading;
+    headingEl.innerHTML = highlightValue(heading);
     card.append(headingEl);
 
     if (description) {

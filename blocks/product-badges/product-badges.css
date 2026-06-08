@@ -28,7 +28,8 @@ main > .section > .product-badges-wrapper.medical { --badge-accent: var(--bt-sta
 @media (width >= 900px) {
   .product-badges-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    column-gap: 60px;
+    row-gap: 60px;
   }
 }
 
@@ -49,10 +50,22 @@ main > .section > .product-badges-wrapper.medical { --badge-accent: var(--bt-sta
     border-bottom: none;
   }
 
-  .product-badges-item:nth-child(n+3) {
-    padding-top: 60px;
-    border-top: 1px solid rgba(255 255 255 / 12%);
+  .product-badges-grid::after {
+    content: '';
+    grid-column: 1 / -1;
+    height: 1px;
+    background-color: rgba(255 255 255 / 12%);
+    order: 2;
   }
+
+  .product-badges-item:nth-child(n+3) {
+    order: 3;
+  }
+}
+
+/* === Blue accent for key values === */
+.product-badges-accent {
+  color: var(--badge-accent);
 }
 
 /* === Heading (full phrase, uppercase bold, value in blue) === */
