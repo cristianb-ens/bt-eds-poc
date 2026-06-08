@@ -99,8 +99,8 @@
 }
 
 /* === CTA shared === */
-.loan-hero-cta-primary,
-.loan-hero-cta-secondary {
+.loan-hero .loan-hero-cta-primary,
+.loan-hero .loan-hero-cta-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -119,13 +119,13 @@
 }
 
 /* === Primary CTA === */
-.loan-hero-cta-primary {
+.loan-hero .loan-hero-cta-primary {
   background-color: var(--loan-hero-cta-primary-bg);
   color: var(--loan-hero-cta-primary-text);
   border: 1px solid var(--loan-hero-cta-primary-border);
 }
 
-.loan-hero-cta-primary:hover {
+.loan-hero .loan-hero-cta-primary:hover {
   background-color: var(--loan-hero-accent-hover);
   border-color: var(--loan-hero-accent-hover);
   color: var(--loan-hero-cta-primary-text);
@@ -133,13 +133,13 @@
 }
 
 /* === Secondary CTA === */
-.loan-hero-cta-secondary {
+.loan-hero .loan-hero-cta-secondary {
   background-color: var(--loan-hero-cta-secondary-bg);
   color: var(--loan-hero-cta-secondary-text);
   border: 1px solid var(--loan-hero-cta-secondary-border);
 }
 
-.loan-hero-cta-secondary:hover {
+.loan-hero .loan-hero-cta-secondary:hover {
   background-color: var(--light-color);
   color: var(--loan-hero-accent-hover);
   text-decoration: none;
