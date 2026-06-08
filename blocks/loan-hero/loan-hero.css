@@ -3,13 +3,8 @@ main > .section.loan-hero-container {
   margin: 0;
 }
 
-main > .section > .loan-hero-wrapper {
-  max-width: none;
-  padding: 0;
-}
-
 /* === Theme Tokens === */
-.loan-hero-wrapper {
+main > .section > .loan-hero-wrapper {
   --loan-hero-accent: #1a76ff;
   --loan-hero-accent-hover: #0090ff;
   --loan-hero-bg: var(--bt-neo);
@@ -21,7 +16,12 @@ main > .section > .loan-hero-wrapper {
   --loan-hero-cta-secondary-text: var(--loan-hero-accent);
   --loan-hero-cta-secondary-border: #dfdfdf;
 
+  max-width: none;
+  padding: 0;
   background-color: var(--loan-hero-bg);
+  background-image: url('https://www.bancatransilvania.ro/assets/themes/bancatransilvania/partials/pages/credit/nevoi-personale/images/header.mix.1feea390c38edcacf44a283034589dcb.webp');
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
 }
 
