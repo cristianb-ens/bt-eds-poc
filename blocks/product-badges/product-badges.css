@@ -1,6 +1,8 @@
+/* === Theme Tokens (defaults to BT Blue brand) === */
 .product-badges-wrapper {
   --badge-accent: var(--accent-color);
   --badge-text: var(--text-color);
+  --badge-label-text: var(--text-color);
   --badge-value-size: var(--heading-font-size-l);
   --badge-label-size: var(--body-font-size-s);
   --badge-gap: var(--spacing-2xl);
@@ -8,6 +10,28 @@
   padding: var(--spacing-3xl) 0 var(--spacing-5xl);
 }
 
+/* === Variant: Student (green) === */
+.product-badges-wrapper.student {
+  --badge-accent: var(--bt-green);
+}
+
+/* === Variant: Medical (purple) === */
+.product-badges-wrapper.medical {
+  --badge-accent: var(--bt-star-purple);
+}
+
+/* === Variant: Auto (deep blue) === */
+.product-badges-wrapper.auto {
+  --badge-accent: var(--blue-t08);
+}
+
+/* === Variant: Renovation (yellow) === */
+.product-badges-wrapper.renovation {
+  --badge-accent: var(--bt-yellow);
+  --badge-text: var(--bt-black);
+}
+
+/* === Grid Layout === */
 .product-badges-grid {
   display: flex;
   flex-wrap: wrap;
@@ -25,6 +49,7 @@
   min-width: 0;
 }
 
+/* === Value (large key element) === */
 .product-badges-value {
   font-family: var(--heading-font-family);
   font-size: var(--badge-value-size);
@@ -35,14 +60,16 @@
   color: var(--badge-accent);
 }
 
+/* === Label (descriptive text) === */
 .product-badges-label {
   font-family: var(--body-font-family);
   font-size: var(--badge-label-size);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-normal);
-  color: var(--badge-text);
+  color: var(--badge-label-text);
 }
 
+/* === Responsive === */
 @media (width >= 900px) {
   .product-badges-wrapper {
     --badge-value-size: var(--heading-font-size-l);
