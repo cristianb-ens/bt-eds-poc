@@ -1,7 +1,7 @@
 /* === Theme Tokens === */
 .onboarding-steps-wrapper {
-  --steps-accent: var(--accent-color);
-  --steps-text: var(--text-color);
+  --steps-accent: #1a76ff;
+  --steps-text: #111;
 
   padding: 32px 0;
 }
@@ -9,19 +9,19 @@
 .onboarding-steps-wrapper.student { --steps-accent: var(--bt-green); }
 .onboarding-steps-wrapper.medical { --steps-accent: var(--bt-star-purple); }
 
-/* === List Layout === */
+/* === List === */
 .onboarding-steps .onboarding-steps-list {
   display: grid;
   gap: 16px;
   list-style: none;
-  margin: 0;
+  margin: 0 0 32px;
   padding: 0 16px;
   counter-reset: step-counter;
   max-width: var(--max-width-content);
   margin-inline: auto;
 }
 
-/* === Step Item === */
+/* === Item === */
 .onboarding-steps-item {
   display: flex;
   align-items: flex-start;
@@ -30,7 +30,7 @@
   min-width: 0;
 }
 
-/* === Step Indicator (numbered circle) === */
+/* === Indicator circle === */
 .onboarding-steps-indicator {
   flex-shrink: 0;
   display: flex;
@@ -40,10 +40,10 @@
   height: 24px;
   border-radius: 50%;
   background-color: var(--steps-accent);
-  color: var(--bt-white);
+  color: #fff;
   font-family: var(--body-font-family);
-  font-size: 12px;
-  font-weight: var(--font-weight-bold);
+  font-size: 11px;
+  font-weight: 700;
   line-height: 1;
 }
 
@@ -51,18 +51,18 @@
   content: counter(step-counter);
 }
 
-/* === Step Text === */
+/* === Step text === */
 .onboarding-steps-text {
   font-family: var(--body-font-family);
   font-size: 17px;
-  font-weight: var(--font-weight-medium);
+  font-weight: 500;
   line-height: 1.44;
   color: var(--steps-text);
   padding-top: 2px;
   min-width: 0;
 }
 
-/* === Responsive: Desktop === */
+/* === Desktop === */
 @media (width >= 900px) {
   .onboarding-steps .onboarding-steps-list {
     padding: 0 24px;

@@ -1,11 +1,13 @@
 /* === Theme Tokens === */
 .adaptive-accordion-wrapper {
-  --accordion-border: 1px solid var(--gray-200);
+  --accordion-accent: #1a76ff;
+  --accordion-border: 1px solid #dfdfdf;
   --accordion-title-size: 17px;
-  --accordion-content-size: 15px;
+  --accordion-content-size: 14px;
   --accordion-padding-block: 16px;
   --accordion-icon-size: 12px;
-  --accordion-accent: var(--accent-color);
+  --accordion-text-color: #111;
+  --accordion-bg: #efeff1;
 
   padding: 8px 0 48px;
 }
@@ -29,7 +31,7 @@
   border-top: var(--accordion-border);
 }
 
-/* === Trigger Button === */
+/* === Trigger === */
 .adaptive-accordion-trigger {
   display: flex;
   align-items: center;
@@ -43,7 +45,7 @@
   background: none;
   cursor: pointer;
   text-align: left;
-  color: var(--text-color);
+  color: var(--accordion-text-color);
   transition: color 0.25s ease-in-out;
 }
 
@@ -55,7 +57,7 @@
 .adaptive-accordion-title {
   font-family: var(--body-font-family);
   font-size: var(--accordion-title-size);
-  font-weight: var(--font-weight-semibold);
+  font-weight: 600;
   line-height: 1.44;
   min-width: 0;
 }
@@ -98,7 +100,7 @@
   transform: translateX(-50%) scaleY(0);
 }
 
-/* === Panel (animated expand/collapse) === */
+/* === Panel === */
 .adaptive-accordion-panel {
   display: grid;
   grid-template-rows: 0fr;
@@ -122,13 +124,13 @@
   padding-bottom: var(--accordion-padding-block);
 }
 
-/* === Panel Content Typography === */
+/* === Panel text === */
 .adaptive-accordion-panel-content p {
   font-family: var(--body-font-family);
   font-size: var(--accordion-content-size);
-  font-weight: var(--font-weight-regular);
-  line-height: 1.6;
-  color: var(--text-color);
+  font-weight: 400;
+  line-height: 1.46;
+  color: var(--accordion-text-color);
   margin: 0 0 12px;
 }
 
@@ -140,8 +142,8 @@
 .adaptive-accordion-panel-content ol {
   font-family: var(--body-font-family);
   font-size: var(--accordion-content-size);
-  line-height: 1.6;
-  color: var(--text-color);
+  line-height: 1.46;
+  color: var(--accordion-text-color);
   margin: 0 0 12px;
   padding-left: 24px;
 }
@@ -150,10 +152,11 @@
   margin-bottom: 8px;
 }
 
-/* === Responsive: Desktop === */
+/* === Desktop === */
 @media (width >= 900px) {
   .adaptive-accordion-wrapper {
     --accordion-padding-block: 20px;
+    --accordion-content-size: 15px;
   }
 
   .adaptive-accordion {

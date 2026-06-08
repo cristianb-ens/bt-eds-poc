@@ -1,65 +1,87 @@
-/* === Theme Tokens (defaults to BT Blue brand) === */
+/* === Theme Tokens === */
 .product-badges-wrapper {
-  --badge-accent: var(--accent-color);
-  --badge-text: var(--text-color);
-  --badge-label-text: var(--text-color);
+  --badge-accent: #1a76ff;
+  --badge-text: #111;
+  --badge-label-text: #111;
 
   padding: 32px 0 64px;
 }
 
-/* === Variant overrides === */
 .product-badges-wrapper.student { --badge-accent: var(--bt-green); }
 .product-badges-wrapper.medical { --badge-accent: var(--bt-star-purple); }
 .product-badges-wrapper.auto { --badge-accent: var(--blue-t08); }
 .product-badges-wrapper.renovation { --badge-accent: var(--bt-yellow); }
 
-/* === Grid Layout === */
+/* === Grid === */
 .product-badges-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 24px;
   max-width: var(--max-width-content);
   margin: 0 auto;
   padding: 0 16px;
 }
 
+/* === Item === */
 .product-badges-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  flex: 1 1 140px;
+  display: block;
   min-width: 0;
 }
 
-/* === Value === */
+/* === Separator between items === */
+.product-badges-item + .product-badges-item {
+  padding-top: 24px;
+  border-top: 1px solid #dfdfdf;
+}
+
+/* === Value (large accent heading) === */
 .product-badges-value {
+  display: block;
   font-family: var(--heading-font-family);
   font-size: 36px;
-  font-weight: var(--font-weight-bold);
+  font-weight: 700;
   line-height: 0.95;
   letter-spacing: -0.72px;
   text-transform: uppercase;
   color: var(--badge-accent);
+  margin: 0 0 8px;
 }
 
-/* === Label === */
+/* === Label (description text) === */
 .product-badges-label {
+  display: block;
   font-family: var(--body-font-family);
   font-size: 17px;
-  font-weight: var(--font-weight-medium);
+  font-weight: 500;
   line-height: 1.44;
   color: var(--badge-label-text);
   min-width: 0;
 }
 
-/* === Responsive: Desktop === */
+.product-badges-label a {
+  color: var(--badge-accent);
+  text-decoration: none;
+}
+
+.product-badges-label a:hover {
+  text-decoration: underline;
+}
+
+/* === Desktop: horizontal row === */
 @media (width >= 900px) {
   .product-badges-grid {
+    display: flex;
     flex-wrap: nowrap;
     padding: 0 24px;
   }
 
   .product-badges-item {
     flex: 1 1 0;
+  }
+
+  .product-badges-item + .product-badges-item {
+    padding-top: 0;
+    padding-left: 24px;
+    border-top: none;
+    border-left: 1px solid #dfdfdf;
   }
 }
