@@ -84,7 +84,12 @@ export default async function decorate(block) {
       grid.append(column);
     });
 
+    const banner = document.createElement('div');
+    banner.className = 'nav-dropdown-banner';
+    banner.innerHTML = '<img src="https://modul.bancatransilvania.ro/secure-storage/BTRL/Menu/acord-mk-meniu-pf.webp" alt="" loading="lazy">';
+
     dropdownInner.append(grid);
+    dropdownInner.append(banner);
     dropdown.append(dropdownInner);
     item.append(trigger);
     item.append(dropdown);
