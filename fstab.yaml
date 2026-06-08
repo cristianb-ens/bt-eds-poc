@@ -1,0 +1,4 @@
+mountpoints:
+  /:
+    url: https://content.da.live/cristianb-ens/bt-eds-poc/
+    type: markup
