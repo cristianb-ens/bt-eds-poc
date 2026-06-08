@@ -1,60 +1,111 @@
+/* === Full-width dark section === */
+main > .section.product-badges-container {
+  margin: 0;
+}
+
+main > .section > .product-badges-wrapper {
+  max-width: none;
+  padding: 0;
+  background-color: #111;
+}
+
 /* === Theme Tokens === */
 .product-badges-wrapper {
   --badge-accent: #1a76ff;
-  --badge-text: #111;
-  --badge-label-text: #111;
-
-  padding: 32px 0 64px;
+  --badge-text: #fff;
 }
 
 .product-badges-wrapper.student { --badge-accent: var(--bt-green); }
 .product-badges-wrapper.medical { --badge-accent: var(--bt-star-purple); }
-.product-badges-wrapper.auto { --badge-accent: var(--blue-t08); }
-.product-badges-wrapper.renovation { --badge-accent: var(--bt-yellow); }
 
-/* === Grid === */
+/* === Grid: 2 columns on desktop === */
 .product-badges-grid {
   display: grid;
-  gap: 24px;
-  max-width: var(--max-width-content);
+  grid-template-columns: 1fr;
+  gap: 0;
+  max-width: 1376px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 80px 32px;
+}
+
+@media (width >= 900px) {
+  .product-badges-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
 }
 
 /* === Item === */
 .product-badges-item {
-  display: block;
-  min-width: 0;
+  text-align: center;
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(255 255 255 / 12%);
 }
 
-/* === Separator between items === */
-.product-badges-item + .product-badges-item {
-  padding-top: 24px;
-  border-top: 1px solid #dfdfdf;
+.product-badges-item:last-child {
+  border-bottom: none;
 }
 
-/* === Value (large accent heading) === */
+@media (width >= 900px) {
+  .product-badges-item {
+    padding: 0;
+    border-bottom: none;
+  }
+
+  /* Separator line between first row and second row */
+  .product-badges-item:nth-child(n+3) {
+    padding-top: 60px;
+    border-top: 1px solid rgba(255 255 255 / 12%);
+  }
+}
+
+/* === Value (large heading with blue highlight) === */
 .product-badges-value {
   display: block;
   font-family: var(--heading-font-family);
   font-size: 36px;
   font-weight: 700;
-  line-height: 0.95;
-  letter-spacing: -0.72px;
+  line-height: 0.9;
+  letter-spacing: -0.9px;
   text-transform: uppercase;
-  color: var(--badge-accent);
-  margin: 0 0 8px;
+  text-align: center;
+  color: var(--badge-text);
+  margin: 0 0 16px;
 }
 
-/* === Label (description text) === */
+@media (width >= 900px) {
+  .product-badges-value {
+    font-size: 45px;
+    line-height: 0.9;
+  }
+}
+
+/* Blue highlighted number within the value */
+.product-badges-value strong,
+.product-badges-value em,
+.product-badges-value u {
+  color: var(--badge-accent);
+  text-decoration: none;
+  font-style: normal;
+}
+
+/* === Label (description) === */
 .product-badges-label {
   display: block;
   font-family: var(--body-font-family);
   font-size: 17px;
   font-weight: 500;
   line-height: 1.44;
-  color: var(--badge-label-text);
+  text-align: center;
+  color: var(--badge-text);
   min-width: 0;
+}
+
+@media (width >= 900px) {
+  .product-badges-label {
+    font-size: 20px;
+    line-height: 1.44;
+  }
 }
 
 .product-badges-label a {
@@ -64,24 +115,4 @@
 
 .product-badges-label a:hover {
   text-decoration: underline;
-}
-
-/* === Desktop: horizontal row === */
-@media (width >= 900px) {
-  .product-badges-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    padding: 0 24px;
-  }
-
-  .product-badges-item {
-    flex: 1 1 0;
-  }
-
-  .product-badges-item + .product-badges-item {
-    padding-top: 0;
-    padding-left: 24px;
-    border-top: none;
-    border-left: 1px solid #dfdfdf;
-  }
 }
