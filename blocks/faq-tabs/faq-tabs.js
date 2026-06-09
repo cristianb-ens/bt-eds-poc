@@ -65,7 +65,7 @@ export default function decorate(block) {
       const question = document.createElement('button');
       question.className = 'faq-tabs-question';
       question.setAttribute('aria-expanded', 'false');
-      question.innerHTML = `<span>${qa.question}</span><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`;
+      question.innerHTML = `<span>${qa.question}</span><span class="faq-tabs-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span>`;
 
       const answer = document.createElement('div');
       answer.className = 'faq-tabs-answer';
