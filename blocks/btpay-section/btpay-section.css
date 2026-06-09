@@ -23,7 +23,6 @@ main > .section > .btpay-section-wrapper {
 @media (width >= 900px) {
   .btpay-layout {
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     gap: 0;
   }
@@ -31,23 +30,15 @@ main > .section > .btpay-section-wrapper {
 
 /* === Figure (left — phone mockup) === */
 .btpay-figure {
-  flex: 0 0 auto;
-  width: 280px;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-@media (width >= 900px) {
-  .btpay-figure {
-    width: 500px;
-    height: 700px;
-  }
-}
-
 .btpay-figure img {
   width: auto;
-  height: 600px;
+  height: 500px;
   max-width: 100%;
   display: block;
   object-fit: contain;
@@ -55,14 +46,13 @@ main > .section > .btpay-section-wrapper {
 
 @media (width < 900px) {
   .btpay-figure img {
-    height: 400px;
+    height: 350px;
   }
 }
 
 /* === Content (right) === */
 .btpay-content {
-  flex: 0 0 auto;
-  width: 100%;
+  flex: 1;
   max-width: 626px;
 }
 
