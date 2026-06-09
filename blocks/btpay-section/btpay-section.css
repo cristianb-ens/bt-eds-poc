@@ -23,32 +23,46 @@ main > .section > .btpay-section-wrapper {
 @media (width >= 900px) {
   .btpay-layout {
     flex-direction: row;
-    gap: 120px;
+    justify-content: space-between;
     align-items: center;
+    gap: 0;
   }
 }
 
 /* === Figure (left — phone mockup) === */
 .btpay-figure {
   flex: 0 0 auto;
-  width: 320px;
+  width: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (width >= 900px) {
   .btpay-figure {
-    width: 400px;
+    width: 500px;
+    height: 700px;
   }
 }
 
 .btpay-figure img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 600px;
+  max-width: 100%;
   display: block;
+  object-fit: contain;
+}
+
+@media (width < 900px) {
+  .btpay-figure img {
+    height: 400px;
+  }
 }
 
 /* === Content (right) === */
 .btpay-content {
-  flex: 1;
+  flex: 0 0 auto;
+  width: 100%;
   max-width: 626px;
 }
 
