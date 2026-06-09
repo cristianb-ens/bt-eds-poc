@@ -5,7 +5,8 @@ export default function decorate(block) {
   const title = rows[0]?.textContent.trim();
   const description = rows[1]?.textContent.trim();
   const ctaRow = rows[2];
-  const imageUrl = rows[3]?.querySelector('img')?.src || rows[3]?.textContent.trim();
+  const imgEl = rows[3]?.querySelector('img');
+  const imageUrl = imgEl?.src || rows[3]?.querySelector('a')?.href || rows[3]?.textContent.trim();
 
   const wrapper = document.createElement('div');
   wrapper.className = 'promo-split-layout';

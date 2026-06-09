@@ -62,7 +62,7 @@ main > .section > .promo-split-wrapper {
   margin: 0 0 32px;
 }
 
-.promo-split-cta {
+.promo-split .promo-split-cta {
   display: inline-flex;
   align-items: center;
   padding: 14px 24px;
@@ -76,7 +76,7 @@ main > .section > .promo-split-wrapper {
   transition: background-color 0.25s ease-in-out;
 }
 
-.promo-split-cta:hover {
+.promo-split .promo-split-cta:hover {
   background-color: #0090ff;
   text-decoration: none;
 }
