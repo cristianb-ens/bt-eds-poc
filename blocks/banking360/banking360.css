@@ -9,8 +9,7 @@ main > .section > .banking360-wrapper {
   background-color: #111;
 }
 
-/* === Wrapper === */
-.banking360 .banking360-wrapper {
+.banking360-inner {
   max-width: 1376px;
   margin: 0 auto;
   padding: 80px 32px 100px;

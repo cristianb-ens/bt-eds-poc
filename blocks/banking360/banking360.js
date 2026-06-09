@@ -41,7 +41,7 @@ export default function decorate(block) {
   block.textContent = '';
 
   const wrapper = document.createElement('div');
-  wrapper.className = 'banking360-wrapper';
+  wrapper.className = 'banking360-inner';
 
   const headingSection = document.createElement('div');
   headingSection.className = 'banking360-heading';
