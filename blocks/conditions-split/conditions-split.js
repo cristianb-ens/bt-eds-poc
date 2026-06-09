@@ -41,7 +41,7 @@ export default function decorate(block) {
     items.forEach((item) => {
       const li = document.createElement('li');
       li.className = 'conditions-split-item';
-      li.innerHTML = `<svg class="conditions-split-check" width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#1a76ff"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>${item}</span>`;
+      li.innerHTML = `<svg class="conditions-split-check" width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#1a76ff"/><path d="M10 16.5l4 4 8-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>${item}</span>`;
       list.append(li);
     });
     content.append(list);
