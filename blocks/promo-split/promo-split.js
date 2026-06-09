@@ -2,6 +2,10 @@ export default function decorate(block) {
   const rows = [...block.querySelectorAll(':scope > div')];
   block.textContent = '';
 
+  const lastRowText = rows[rows.length - 1]?.textContent.trim().toLowerCase();
+  const isReversed = lastRowText === 'reversed';
+  if (isReversed) rows.pop();
+
   const title = rows[0]?.textContent.trim();
   const description = rows[1]?.textContent.trim();
   const ctaRow = rows[2];
@@ -45,6 +49,10 @@ export default function decorate(block) {
     img.alt = title || '';
     img.loading = 'lazy';
     figure.append(img);
+  }
+
+  if (isReversed) {
+    block.closest('.promo-split-wrapper')?.classList.add('reversed');
   }
 
   wrapper.append(content);
