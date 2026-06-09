@@ -18,6 +18,7 @@ main > .section > .banking360-wrapper {
 /* === Heading === */
 .banking360-heading {
   margin-bottom: 48px;
+  text-align: center;
 }
 
 .banking360-title {
