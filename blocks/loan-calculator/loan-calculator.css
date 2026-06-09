@@ -174,6 +174,8 @@ main > .section > .loan-calculator-wrapper {
   font-weight: 500;
   color: rgba(255 255 255 / 50%);
   cursor: pointer;
+  text-align: center;
+  min-width: 0;
   transition: all 0.2s ease-in-out;
 }
 
@@ -215,6 +217,8 @@ main > .section > .loan-calculator-wrapper {
   color: rgba(255 255 255 / 50%);
   cursor: pointer;
   text-transform: uppercase;
+  text-align: center;
+  min-width: 0;
   transition: all 0.2s ease-in-out;
 }
 
@@ -288,7 +292,7 @@ main > .section > .loan-calculator-wrapper {
   margin-bottom: 24px;
 }
 
-.calc-cta-primary {
+.loan-calculator .calc-cta-primary {
   flex: 1;
   display: inline-flex;
   align-items: center;
@@ -302,15 +306,17 @@ main > .section > .loan-calculator-wrapper {
   font-weight: 500;
   text-decoration: none;
   border: none;
+  margin: 0;
   cursor: pointer;
   transition: background-color 0.25s ease-in-out;
 }
 
-.calc-cta-primary:hover {
+.loan-calculator .calc-cta-primary:hover {
   background-color: #0090ff;
+  text-decoration: none;
 }
 
-.calc-cta-secondary {
+.loan-calculator .calc-cta-secondary {
   flex: 1;
   display: inline-flex;
   align-items: center;
@@ -325,11 +331,13 @@ main > .section > .loan-calculator-wrapper {
   text-decoration: none;
   border: 1px solid rgba(255 255 255 / 30%);
   cursor: pointer;
+  margin: 0;
   transition: border-color 0.25s ease-in-out;
 }
 
-.calc-cta-secondary:hover {
+.loan-calculator .calc-cta-secondary:hover {
   border-color: #fff;
+  text-decoration: none;
 }
 
 /* === Disclaimer === */
