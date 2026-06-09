@@ -50,6 +50,11 @@ header .nav-brand a {
   align-items: center;
 }
 
+header .nav-brand img {
+  width: 49px;
+  height: 56px;
+}
+
 /* nav links */
 header .nav-links {
   display: none;
@@ -141,7 +146,7 @@ header .nav-dropdown-heading {
   font-family: var(--heading-font-family);
   font-size: 29px;
   font-weight: 700;
-  font-style: italic;
+  font-style: normal;
   text-transform: uppercase;
   color: #fff;
   margin: 0 0 20px;
@@ -158,7 +163,7 @@ header .nav-dropdown-link {
   font-family: var(--body-font-family);
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255 255 255 / 65%);
+  color: #fff;
   text-decoration: none;
   padding: 0;
   margin: 0 0 16px;
@@ -172,7 +177,7 @@ header .nav-dropdown-link:last-child {
 }
 
 header .nav-dropdown-link:hover {
-  color: #fff;
+  color: #1a76ff;
   text-decoration: none;
 }
 
@@ -197,7 +202,7 @@ header .nav-dropdown-linklist-item {
   font-family: var(--heading-font-family);
   font-size: 24px;
   font-weight: 700;
-  font-style: italic;
+  font-style: normal;
   text-transform: uppercase;
   color: #fff;
   text-decoration: none;

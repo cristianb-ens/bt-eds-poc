@@ -27,13 +27,20 @@ export default function decorate(block) {
     card.className = 'articles-grid-card';
     card.href = link?.href || '/';
 
-    if (imageUrl) {
-      const img = document.createElement('img');
-      img.src = imageUrl;
-      img.alt = title;
-      img.loading = 'lazy';
-      card.append(img);
-    }
+    const fallbackImages = [
+      'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80',
+      'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80',
+      'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&q=80',
+      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80',
+    ];
+    const imgSrc = imageUrl && !imageUrl.includes('bancatransilvania.ro')
+      ? imageUrl
+      : fallbackImages[grid.children.length % fallbackImages.length];
+    const img = document.createElement('img');
+    img.src = imgSrc;
+    img.alt = title;
+    img.loading = 'lazy';
+    card.append(img);
 
     const dateEl = document.createElement('span');
     dateEl.className = 'articles-grid-date';
