@@ -91,18 +91,19 @@ main > .section > .conditions-split-wrapper {
 /* === Links row === */
 .conditions-split-links {
   display: flex;
-  gap: 48px;
-  padding: 24px 16px;
+  gap: 32px;
+  padding: 24px 0;
   border-top: 1px solid rgba(255 255 255 / 15%);
   border-bottom: 1px solid rgba(255 255 255 / 15%);
+  max-width: 100%;
 }
 
 .conditions-split-link {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   font-family: var(--body-font-family);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   color: #fff;
   text-decoration: none;
@@ -114,22 +115,27 @@ main > .section > .conditions-split-wrapper {
   text-decoration: none;
 }
 
+.conditions-split-link svg {
+  flex-shrink: 0;
+}
+
 /* === Figure (right) === */
 .conditions-split-figure {
   flex: 1;
   overflow: hidden;
   border-radius: 24px;
+  align-self: flex-start;
 }
 
 @media (width >= 900px) {
   .conditions-split-figure {
-    margin-right: -32px;
+    margin-top: -40px;
   }
 }
 
 .conditions-split-figure img {
   width: 100%;
-  height: 600px;
+  height: 500px;
   display: block;
   object-fit: cover;
 }

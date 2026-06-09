@@ -54,7 +54,7 @@ export default function decorate(block) {
       const a = document.createElement('a');
       a.href = l.href;
       a.className = 'conditions-split-link';
-      a.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="#1a76ff"/><path d="M6 12h12M12 6v12" stroke="#fff" stroke-width="2"/></svg>${l.text}`;
+      a.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#1a76ff"/><path d="M7 7h6M7 11h10M7 15h8" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>${l.text}`;
       linksDiv.append(a);
     });
     content.append(linksDiv);
