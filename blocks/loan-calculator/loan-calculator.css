@@ -29,7 +29,7 @@ main > .section > .loan-calculator-wrapper {
 
 /* === Widget card (left) === */
 .calc-widget {
-  background-color: #1d1d1d;
+  background-color: #efeff1;
   border-radius: 24px;
   padding: 48px 56px;
   flex: 0 0 630px;
@@ -50,7 +50,7 @@ main > .section > .loan-calculator-wrapper {
   font-size: 36px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #fff;
+  color: #111;
   margin: 0 0 32px;
   letter-spacing: -0.72px;
   line-height: 0.95;
@@ -62,7 +62,7 @@ main > .section > .loan-calculator-wrapper {
   font-family: var(--body-font-family);
   font-size: 14px;
   font-weight: 700;
-  color: #fff;
+  color: #111;
   margin-bottom: 12px;
 }
 
@@ -75,7 +75,7 @@ main > .section > .loan-calculator-wrapper {
 
 .calc-amount-field {
   flex: 1;
-  background: #2a2a2a;
+  background: #d4d4d4;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -89,7 +89,7 @@ main > .section > .loan-calculator-wrapper {
   font-family: var(--body-font-family);
   font-size: 24px;
   font-weight: 700;
-  color: #fff;
+  color: #111;
   text-align: center;
   width: 100%;
   outline: none;
@@ -99,13 +99,13 @@ main > .section > .loan-calculator-wrapper {
   display: flex;
   align-items: center;
   gap: 4px;
-  background: #2a2a2a;
+  background: #d4d4d4;
   border-radius: 12px;
   padding: 16px 20px;
   font-family: var(--body-font-family);
   font-size: 14px;
   font-weight: 700;
-  color: #fff;
+  color: #111;
 }
 
 /* === Range slider === */
@@ -117,7 +117,7 @@ main > .section > .loan-calculator-wrapper {
   width: 100%;
   height: 4px;
   appearance: none;
-  background: linear-gradient(to right, #1a76ff var(--progress, 0%), #3a3a3a var(--progress, 0%));
+  background: linear-gradient(to right, #1a76ff var(--progress, 0%), #bcbcbc var(--progress, 0%));
   border-radius: 2px;
   outline: none;
   cursor: pointer;
@@ -151,7 +151,7 @@ main > .section > .loan-calculator-wrapper {
   font-family: var(--body-font-family);
   font-size: 12px;
   font-weight: 500;
-  color: rgba(255 255 255 / 50%);
+  color: #67686a;
 }
 
 /* === Year selector === */
@@ -159,7 +159,7 @@ main > .section > .loan-calculator-wrapper {
   display: flex;
   gap: 0;
   margin-bottom: 32px;
-  background: #2a2a2a;
+  background: #d4d4d4;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -172,19 +172,20 @@ main > .section > .loan-calculator-wrapper {
   font-family: var(--body-font-family);
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255 255 255 / 60%);
+  color: #67686a;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 
 .calc-year-btn.active {
-  background: #3a3a3a;
+  background: #111;
   color: #fff;
   font-weight: 700;
+  border-radius: 12px;
 }
 
 .calc-year-btn:hover:not(.active) {
-  color: #fff;
+  color: #111;
 }
 
 /* === Rate type selector === */
@@ -198,7 +199,7 @@ main > .section > .loan-calculator-wrapper {
   display: flex;
   gap: 0;
   margin-bottom: 32px;
-  background: #2a2a2a;
+  background: #d4d4d4;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -211,16 +212,17 @@ main > .section > .loan-calculator-wrapper {
   font-family: var(--body-font-family);
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255 255 255 / 60%);
+  color: #67686a;
   cursor: pointer;
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
 }
 
 .calc-rate-btn.active {
-  background: #3a3a3a;
+  background: #111;
   color: #fff;
   font-weight: 700;
+  border-radius: 12px;
 }
 
 /* === Result row === */
@@ -231,7 +233,7 @@ main > .section > .loan-calculator-wrapper {
 }
 
 .calc-result-box {
-  background: #2a2a2a;
+  background: #d4d4d4;
   border-radius: 12px;
   padding: 16px 24px;
   flex: 0 0 auto;
@@ -241,7 +243,7 @@ main > .section > .loan-calculator-wrapper {
   font-family: var(--body-font-family);
   font-size: 12px;
   font-weight: 500;
-  color: rgba(255 255 255 / 50%);
+  color: #67686a;
   margin-bottom: 4px;
 }
 
@@ -249,7 +251,7 @@ main > .section > .loan-calculator-wrapper {
   font-family: var(--heading-font-family);
   font-size: 36px;
   font-weight: 700;
-  color: #fff;
+  color: #111;
   letter-spacing: -0.5px;
   line-height: 1;
 }
@@ -263,24 +265,76 @@ main > .section > .loan-calculator-wrapper {
 
 .calc-action-btn {
   padding: 12px 16px;
-  border: 1px solid rgba(255 255 255 / 20%);
+  border: 1px solid #bcbcbc;
   border-radius: 12px;
   background: transparent;
   font-family: var(--body-font-family);
   font-size: 13px;
   font-weight: 500;
-  color: #fff;
+  color: #111;
   cursor: pointer;
   transition: border-color 0.2s ease-in-out;
 }
 
 .calc-action-btn:hover {
-  border-color: rgba(255 255 255 / 50%);
+  border-color: #111;
+}
+
+/* === Bottom CTAs === */
+.calc-bottom-ctas {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.calc-cta-primary {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  border-radius: 120px;
+  background-color: #1a76ff;
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.calc-cta-primary:hover {
+  background-color: #0090ff;
+}
+
+.calc-cta-secondary {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  border-radius: 120px;
+  background-color: transparent;
+  color: #111;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid #bcbcbc;
+  cursor: pointer;
+  transition: border-color 0.25s ease-in-out;
+}
+
+.calc-cta-secondary:hover {
+  border-color: #111;
 }
 
 /* === Disclaimer === */
 .calc-disclaimer {
-  border-top: 1px solid rgba(255 255 255 / 10%);
+  border-top: 1px solid #d4d4d4;
   padding-top: 20px;
 }
 
@@ -288,7 +342,7 @@ main > .section > .loan-calculator-wrapper {
   font-family: var(--body-font-family);
   font-size: 11px;
   font-weight: 400;
-  color: rgba(255 255 255 / 45%);
+  color: #67686a;
   line-height: 1.5;
   margin: 0 0 8px;
 }

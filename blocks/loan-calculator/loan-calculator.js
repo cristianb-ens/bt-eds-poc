@@ -29,14 +29,6 @@ export default function decorate(block) {
     return state.rateType === 'fixed' ? state.fixedRate : state.variableRate;
   }
 
-  function update() {
-    const monthly = calculateMonthlyRate(state.amount, getRate(), state.years);
-    wrapper.querySelector('.calc-amount-input').value = formatNumber(state.amount);
-    wrapper.querySelector('.calc-result-value').textContent = `${monthly} LEI`;
-    const pct = ((state.amount - state.min) / (state.max - state.min)) * 100;
-    wrapper.querySelector('.calc-range').style.setProperty('--progress', `${pct}%`);
-  }
-
   const wrapper = document.createElement('div');
   wrapper.className = 'calc-layout';
 
@@ -84,6 +76,10 @@ export default function decorate(block) {
         </div>
       </div>
 
+      <div class="calc-bottom-ctas">
+        <a href="/credite/credite-de-nevoi/aplica-pentru-credit" class="calc-cta-primary">Aplică pentru credit</a>
+        <button class="calc-cta-secondary">Vezi scadențar</button>
+      </div>
       <div class="calc-disclaimer">
         <p>E bine să știi că oferta finală este personalizată, cuprinsă între 5,99% și 18,50% și ține cont de câteva elemente precum: încasarea venitului în cont BT, adăugarea poliței de asigurare de viață și șomaj, refinanțare externă, istoricul relației cu banca, comportamentul de plată pentru ratele în derulare, ș. a.</p>
         <p>Valoarea ratei lunare depinde și de parametri aleși pentru calcul (perioada de returnare, valoarea dobânzii variabile). Aceștia pot fi consultați și modificați din setările simulatorului.</p>
@@ -99,6 +95,14 @@ export default function decorate(block) {
       </a>
     </div>
   `;
+
+  function update() {
+    const monthly = calculateMonthlyRate(state.amount, getRate(), state.years);
+    wrapper.querySelector('.calc-amount-input').value = formatNumber(state.amount);
+    wrapper.querySelector('.calc-result-value').textContent = `${monthly} LEI`;
+    const pct = ((state.amount - state.min) / (state.max - state.min)) * 100;
+    wrapper.querySelector('.calc-range').style.setProperty('--progress', `${pct}%`);
+  }
 
   // Range slider
   const rangeInput = wrapper.querySelector('.calc-range');
