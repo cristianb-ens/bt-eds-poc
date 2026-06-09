@@ -1,0 +1,108 @@
+/* === Full-width dark section === */
+main > .section.conditions-split-container {
+  margin: 0;
+}
+
+main > .section > .conditions-split-wrapper {
+  max-width: none;
+  padding: 0;
+  background-color: #111;
+}
+
+/* === Layout === */
+.conditions-split-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 1376px;
+  margin: 0 auto;
+  padding: 80px 32px;
+  align-items: flex-start;
+}
+
+@media (width >= 900px) {
+  .conditions-split-layout {
+    flex-direction: row;
+    gap: 84px;
+    padding: 100px 32px;
+    align-items: center;
+  }
+}
+
+/* === Content (left) === */
+.conditions-split-content {
+  flex: 1;
+}
+
+.conditions-split-title {
+  font-family: var(--heading-font-family);
+  font-size: 56px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 32px;
+  letter-spacing: -0.84px;
+  line-height: 0.85;
+}
+
+/* === Checklist === */
+.conditions-split-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+}
+
+.conditions-split-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  font-family: var(--body-font-family);
+  font-size: 17px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.conditions-split-check {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* === Links row === */
+.conditions-split-links {
+  display: flex;
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255 255 255 / 12%);
+}
+
+.conditions-split-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a76ff;
+  text-decoration: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.conditions-split-link:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+/* === Figure (right) === */
+.conditions-split-figure {
+  flex: 1;
+  max-width: 600px;
+}
+
+.conditions-split-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
