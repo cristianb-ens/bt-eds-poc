@@ -37,34 +37,34 @@ main > .section > .promo-split-wrapper {
 
 .promo-split-title {
   font-family: var(--heading-font-family);
-  font-size: 45px;
+  font-size: 56px;
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
   margin: 0 0 24px;
-  letter-spacing: -0.9px;
+  letter-spacing: -1.88px;
   line-height: 0.9;
 }
 
 @media (width >= 900px) {
   .promo-split-title {
-    font-size: 56px;
+    font-size: 94px;
   }
 }
 
 .promo-split-text {
   font-family: var(--body-font-family);
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 500;
   color: rgba(255 255 255 / 80%);
-  line-height: 1.5;
-  margin: 0 0 32px;
+  line-height: 1.44;
+  margin: 0 0 40px;
 }
 
 .promo-split .promo-split-cta {
   display: inline-flex;
   align-items: center;
-  padding: 14px 24px;
+  padding: 20px 30px;
   border-radius: 120px;
   background-color: #1a76ff;
   color: #fff;
@@ -72,7 +72,7 @@ main > .section > .promo-split-wrapper {
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
-  transition: background-color 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 .promo-split .promo-split-cta:hover {
@@ -91,4 +91,37 @@ main > .section > .promo-split-wrapper {
   height: auto;
   display: block;
   border-radius: 16px;
+}
+
+/* === Reversed variant (figure left, content right) === */
+@media (width >= 900px) {
+  .promo-split-wrapper.reversed .promo-split-layout {
+    flex-direction: row-reverse;
+    gap: 120px;
+    padding: 100px 32px;
+  }
+}
+
+.promo-split-wrapper.reversed .promo-split-figure {
+  max-width: 690px;
+}
+
+.promo-split-wrapper.reversed .promo-split-figure img {
+  height: 700px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+/* === Outline CTA variant === */
+.promo-split .promo-split-cta.outline,
+.promo-split-wrapper.reversed .promo-split-cta {
+  background-color: transparent;
+  color: #1a76ff;
+  border: 1px solid #dfdfdf;
+}
+
+.promo-split .promo-split-cta.outline:hover,
+.promo-split-wrapper.reversed .promo-split-cta:hover {
+  background-color: transparent;
+  border-color: #1a76ff;
 }
