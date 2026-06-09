@@ -139,7 +139,7 @@ function routeVariantSections(main) {
   main.querySelectorAll('.section[data-variant]').forEach((section) => {
     const variantName = section.dataset.variant;
     if (variantName === active) {
-      section.classList.add('active-variant', `variant-${variantName}`);
+      section.classList.add('active-variant', `variant-${variantName.toLowerCase()}`);
     } else {
       section.remove();
     }
