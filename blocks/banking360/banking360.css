@@ -65,7 +65,7 @@ main > .section > .banking360-wrapper {
 
 /* === Card === */
 .banking360-card {
-  background-color: #1d1d1f;
+  background-color: #efeff1;
   border-radius: 34px;
   padding: 40px;
   display: flex;
@@ -96,7 +96,7 @@ main > .section > .banking360-wrapper {
   font-family: var(--body-font-family);
   font-size: 14px;
   font-weight: 400;
-  color: rgba(255 255 255 / 60%);
+  color: #111;
   margin-bottom: 8px;
 }
 
@@ -105,6 +105,6 @@ main > .section > .banking360-wrapper {
   font-family: var(--body-font-family);
   font-size: 17px;
   font-weight: 500;
-  color: #fff;
+  color: #111;
   line-height: 1.44;
 }
