@@ -19,7 +19,6 @@ export default function decorate(block) {
     const date = cols[0]?.textContent.trim();
     const title = cols[1]?.textContent.trim();
     const link = row.querySelector('a');
-    const imageUrl = cols[2]?.textContent.trim() || '';
 
     if (!date || !title) return;
 
@@ -37,7 +36,7 @@ export default function decorate(block) {
     img.src = fallbackImages[grid.children.length % fallbackImages.length];
     img.alt = title;
     img.loading = 'lazy';
-    img.onerror = () => { img.src = fallbackImages[0]; };
+    img.onerror = () => { [img.src] = fallbackImages; };
     card.append(img);
 
     const dateEl = document.createElement('span');
